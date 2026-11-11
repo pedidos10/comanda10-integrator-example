@@ -1,0 +1,57 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: -apple-system, system-ui, sans-serif; background: #f2f5f4; color: #1d2b2a; }
+header { display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; background: #0f5c4d; color: #fff; }
+.brand { font-size: 20px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+.brand small { font-weight: 400; opacity: 0.7; font-size: 13px; }
+.logo { background: #3fd0a6; color: #0f5c4d; border-radius: 8px; padding: 4px 8px; font-size: 14px; }
+.target code { background: rgba(255, 255, 255, 0.15); padding: 2px 6px; border-radius: 4px; }
+main { display: flex; gap: 16px; padding: 16px 24px; align-items: flex-start; }
+.column { display: flex; flex-direction: column; gap: 16px; width: 380px; flex-shrink: 0; }
+.column.wide { flex: 1; width: auto; }
+.card { background: #fff; border-radius: 12px; padding: 16px 18px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); }
+.card h2 { margin: 0 0 8px; font-size: 16px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; }
+.muted { color: #6b7b79; font-size: 14px; }
+button { background: #0f5c4d; color: #fff; border: 0; border-radius: 8px; padding: 8px 14px; cursor: pointer; font-size: 14px; }
+button.secondary { background: #e3ece9; color: #0f5c4d; }
+button.danger { background: #fde8e8; color: #b42318; }
+button:disabled { opacity: 0.5; cursor: default; }
+input[type='text'] { padding: 8px 10px; border: 1px solid #c9d6d3; border-radius: 8px; font-size: 15px; width: 100%; text-transform: uppercase; font-family: monospace; letter-spacing: 2px; }
+.pending { border: 1px dashed #3fd0a6; border-radius: 10px; padding: 12px; margin-top: 12px; }
+.code { font-family: monospace; font-size: 30px; letter-spacing: 4px; text-align: center; margin: 6px 0; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 8px; }
+.merchant { border-top: 1px solid #edf1f0; padding: 10px 0; }
+.merchant:first-child { border-top: 0; }
+.merchant strong { display: block; }
+.badge { font-size: 12px; padding: 2px 8px; border-radius: 10px; background: #e3f6ef; color: #0f5c4d; }
+.badge.bad { background: #fde8e8; color: #b42318; }
+.tabs { display: flex; gap: 6px; margin: 8px 0 12px; }
+.tabs button { background: #e3ece9; color: #0f5c4d; }
+.tabs button.active { background: #0f5c4d; color: #fff; }
+.category h3 { margin: 16px 0 6px; font-size: 15px; border-bottom: 2px solid #3fd0a6; display: inline-block; }
+.item { display: flex; gap: 12px; padding: 8px 0; border-bottom: 1px solid #f1f4f3; }
+.item img { width: 56px; height: 56px; object-fit: cover; border-radius: 8px; background: #eef3f2; }
+.item .info { flex: 1; }
+.item .price { font-weight: 700; white-space: nowrap; }
+.unavailable { opacity: 0.5; }
+.group { font-size: 13px; color: #415250; margin-top: 4px; }
+pre { background: #0d1b1a; color: #c9f3e6; padding: 12px; border-radius: 8px; overflow: auto; max-height: 70vh; font-size: 12px; }
+.log { margin: 0 24px 24px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { text-align: left; padding: 4px 8px; border-bottom: 1px solid #edf1f0; }
+td.s2 { color: #0f7a3d; } td.s4, td.s5 { color: #b42318; font-weight: 600; }
+
+.order { border: 1px solid #e3ece9; border-radius: 10px; padding: 10px 12px; margin-top: 8px; cursor: pointer; }
+.order .head { display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+.order .details { margin-top: 8px; font-size: 13px; display: none; }
+.order.open .details { display: block; }
+.status { font-size: 12px; padding: 2px 8px; border-radius: 10px; background: #e3ece9; }
+.status.CONCLUDED { background: #dff3e4; color: #0f7a3d; }
+.status.CANCELLED { background: #fde8e8; color: #b42318; }
+.status.DISPATCHED, .status.READY_FOR_PICKUP { background: #fff4d6; color: #8a5a00; }
+.details table td { padding: 2px 6px; }
+
+select { padding: 6px 8px; border: 1px solid #c9d6d3; border-radius: 8px; font-size: 14px; }
+.kpi-summary { display: flex; gap: 12px; margin: 8px 0 12px; flex-wrap: wrap; }
+.kpi-summary div { background: #f2f7f6; border-radius: 10px; padding: 10px 14px; min-width: 140px; }
+.kpi-summary b { display: block; font-size: 20px; color: #0f5c4d; }

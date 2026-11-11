@@ -1,0 +1,16 @@
+{
+    "name": "comanda10-integrator-example",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "description": "Integradora de exemplo da Comanda10 Integrator API: vínculo OAuth, cardápio, sincronização de pedidos e indicadores.",
+    "license": "MIT",
+    "scripts": {
+        "start": "node --env-file=.env src/server.js",
+        "dev": "node --env-file=.env --watch src/server.js",
+        "test": "node --test"
+    },
+    "engines": {
+        "node": ">=22"
+    }
+}

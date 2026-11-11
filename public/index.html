@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8" />
+        <title>Integradora Exemplo · Comanda10 Integrator API</title>
+        <link rel="stylesheet" href="/style.css" />
+    </head>
+    <body>
+        <header>
+            <div class="brand"><span class="logo">IE</span> Integradora Exemplo <small>código de exemplo da Comanda10 Integrator API</small></div>
+            <div class="target">API Comanda10: <code id="baseUrl"></code> · clientId <code id="clientId"></code></div>
+        </header>
+
+        <main>
+            <section class="column">
+                <div class="card">
+                    <h2>Vincular estabelecimento</h2>
+                    <p class="muted">
+                        Gera um código em <code>POST /oauth/userCode</code>. O estabelecimento aprova no gestão e
+                        devolve o código de autorização.
+                    </p>
+                    <button id="startLink">Gerar código de vínculo</button>
+                    <div id="pendingLinks"></div>
+                </div>
+
+                <div class="card">
+                    <h2>Estabelecimentos vinculados</h2>
+                    <div id="merchants" class="muted">Nenhum ainda.</div>
+                </div>
+            </section>
+
+            <section class="column wide">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 id="catalogTitle">Cardápio</h2>
+                        <label class="toggle"><input type="checkbox" id="rawToggle" /> JSON cru</label>
+                    </div>
+                    <div id="catalog" class="muted">Escolha um estabelecimento e clique em "Ver cardápio".</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h2 id="ordersTitle">Pedidos</h2>
+                        <div class="row" style="margin: 0">
+                            <label class="toggle"><input type="checkbox" id="autoSync" /> auto (15s)</label>
+                            <button id="syncOrders" disabled>Sincronizar</button>
+                            <button id="resetOrders" class="secondary" disabled>Zerar cópia local</button>
+                        </div>
+                    </div>
+                    <div id="syncInfo" class="muted"></div>
+                    <div id="orders" class="muted">Escolha um estabelecimento e clique em "Pedidos".</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h2 id="kpiTitle">Indicadores</h2>
+                        <div class="row" style="margin: 0">
+                            <select id="kpiDays"><option value="7">7 dias</option><option value="30" selected>30 dias</option><option value="90">90 dias</option></select>
+                            <select id="kpiGroup">
+                                <option value="">Sem agrupar</option>
+                                <option value="orderType" selected>Tipo de pedido</option>
+                                <option value="salesChannel">Canal de venda</option>
+                                <option value="paymentMethod">Forma de pagamento</option>
+                                <option value="dayOfWeek">Dia da semana</option>
+                                <option value="orderCreationHour">Hora</option>
+                                <option value="waiter">Garçom</option>
+                                <option value="category">Categoria</option>
+                            </select>
+                            <label class="toggle"><input type="checkbox" id="kpiConcluded" checked /> só concluídos</label>
+                            <button id="loadKpis" disabled>Consultar</button>
+                        </div>
+                    </div>
+                    <div id="kpis" class="muted">Escolha um estabelecimento e clique em "Indicadores".</div>
+                </div>
+            </section>
+        </main>
+
+        <section class="card log">
+            <h2>Chamadas à API Comanda10</h2>
+            <table>
+                <thead>
+                    <tr><th>Quando</th><th>Método</th><th>Rota</th><th>Status</th><th>ms</th><th>Erro</th></tr>
+                </thead>
+                <tbody id="log"></tbody>
+            </table>
+        </section>
+
+        <script src="/app.js"></script>
+    </body>
+</html>
